@@ -21,6 +21,10 @@ line_list = file_object.readlines()
 #Close the file 
 file_object.close()
 
+#Create two empty dictionary objects 
+date_dict = {}
+coord_dict = {}
+
 #Iterate through all lines in the linelist
 for lineString in line_list[17:]:
     if lineString[0] in ("#","u"): continue
@@ -28,7 +32,7 @@ for lineString in line_list[17:]:
     #Split the string into a list of data items
     lineData = lineString.split()
     
-    #Extrract items in list into variables 
+    #Extract items in list into variables 
     record_id = lineData[0]
     obs_date = lineData[2]
     obs_lc= lineData[4]
@@ -37,3 +41,6 @@ for lineString in line_list[17:]:
     
     #Print the location of sara
     print(f"Record {record_id} indicates Sara was seen at lat:{obs_lat},lon:{obs_lon} on {obs_date}")
+    date_dict[record_id] = obs_date
+    coord_dict[record_id] = (obs_lat,obs_lon)
+    
