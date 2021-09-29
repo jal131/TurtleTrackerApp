@@ -36,6 +36,8 @@ for lineString in line_list[17:]:
     record_id = lineData[0]
     obs_date = lineData[2]
     obs_lc= lineData[4]
+    if obs_lc not in ("1","2","3"):
+        continue
     obs_lat = lineData[6]
     obs_lon = lineData[7]
     
