@@ -64,7 +64,7 @@ for date_item in date_dict.items():
 
 #If no records found, tell the user
 if len(matching_keys) == 0:
-    print(f"No observations on {user_date}")
+    print(f"No observations on {user_date}; is your date format valid?")
         
 #Reveal locations for each key in matching keys 
 for matching_key in matching_keys: 
